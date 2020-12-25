@@ -7,9 +7,8 @@ class Car {
    * в консоль значения свойств maxSpeed, speed, isOn, distance и price.
    */
   static getSpecs(car) {
-    this.car = car;
     console.log(
-      `maxSpeed: ${this.car.maxSpeed}, speed: ${this.car.speed}, isOn: ${this.car.isOn}, distance: ${this.car.distance}, price: ${this.car.price}`,
+      `maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`,
     );
   }
   /*

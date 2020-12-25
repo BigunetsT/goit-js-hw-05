@@ -19,13 +19,11 @@ class Storage {
       this.items.push(item);
     }
   }
-  removeItem(removedItem) {
-    const newItems = [];
-    for (const item of this.items) {
-      if (item === removedItem) continue;
-      newItems.push(item);
+  removeItem(item) {
+    const index = this.items.indexOf(item);
+    if (index !== -1) {
+      this.items.splice(index, 1);
     }
-    this.items = newItems;
   }
 }
 
