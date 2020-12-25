@@ -8,22 +8,24 @@
 // removeItem(item) - получет товар и, если он есть, удаляет его из текущих
 
 class Storage {
-  constructor([...args]) {
-    this.items = Object.values(args);
+  constructor(items) {
+    this.items = items;
   }
   getItems() {
     return this.items;
   }
   addItem(item) {
-    this.items.push(item);
-  }
-  removeItem(item) {
-    if (this.items.includes(item)) {
-      const itemIndex = this.items.indexOf(item);
-      this.items.splice(itemIndex, 1);
-    } else {
-      console.log('такого элемента нет');
+    if (!this.items.includes(item)) {
+      this.items.push(item);
     }
+  }
+  removeItem(removedItem) {
+    const newItems = [];
+    for (const item of this.items) {
+      if (item === removedItem) continue;
+      newItems.push(item);
+    }
+    this.items = newItems;
   }
 }
 
